@@ -41,14 +41,14 @@ while true do
 
     -- Clear the monitor and set the cursor position
     monitor.clear()
-    monitor.setCursorPos(6, 4)
+    monitor.setCursorPos(6, 5)
 
     -- Format and display the time with AM/PM
     monitor.write(formatTimeWithAMPM(time))
 
     -- Check if it's "Sleepy Time"
     if isSleepyTime(time) then
-        monitor.setCursorPos(4, 3)
+        monitor.setCursorPos(4, 4)
         monitor.write("Sleepy Time")
     end
 
