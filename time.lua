@@ -1,7 +1,11 @@
--- Open monitor on the side it's attached to (e.g., "right", "left")
+-- Open monitor
 local monitor = peripheral.find("monitor")
 monitor.clear()
 monitor.setTextScale(1)
+
+-- Attach the speakers
+local speaker_0 = peripheral.wrap("speaker_0")
+local speaker_1 = peripheral.wrap("speaker_1")
 
 -- Function to convert and format time to 12-hour format with AM/PM
 local function formatTimeWithAMPM(time)
@@ -45,6 +49,11 @@ while true do
 
     -- Format and display the time with AM/PM
     monitor.write(formatTimeWithAMPM(time))
+    
+    if hours == 6 and minutes == 32 and period == "PM" then
+        -- Play a sound on both speakers
+        speaker_0.playSound("minecraft:block.note_block.pling")
+        speaker_1.playSound("minecraft:block.note_block.pling")
 
     -- Check if it's "Sleepy Time"
     if isSleepyTime(time) then
