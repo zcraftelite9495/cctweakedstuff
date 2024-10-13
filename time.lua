@@ -48,7 +48,7 @@ while true do
 
     -- Check if it's "Sleepy Time"
     if isSleepyTime(time) then
-        monitor.setCursorPos(1, 2)
+        monitor.setCursorPos(3, 4)
         monitor.write("Sleepy Time")
     end
 
