@@ -27,7 +27,7 @@ local function isSleepyTime(time)
     local minutes = math.floor((time - hours) * 60)
 
     -- Check if the time is after 6:32 PM (18:32) or before 6:32 AM (6:32)
-    if (hours > 18 or (hours == 18 and minutes >= 32)) or (hours < 6 or (hours == 6 and minutes < 32)) then
+    if (hours > 18 or (hours == 18 and minutes >= 32)) or (hours < 6 or (hours == 6 and minutes < 01)) then
         return true
     else
         return false
@@ -44,7 +44,7 @@ while true do
     monitor.setCursorPos(6, 5)
 
     -- Format and display the time with AM/PM
-    monitor.write("Time: " .. formatTimeWithAMPM(time))
+    monitor.write(formatTimeWithAMPM(time))
 
     -- Check if it's "Sleepy Time"
     if isSleepyTime(time) then
