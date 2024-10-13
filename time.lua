@@ -54,6 +54,7 @@ while true do
         -- Play a sound on both speakers
         speaker_0.playSound("minecraft:block.note_block.pling")
         speaker_1.playSound("minecraft:block.note_block.pling")
+    end
 
     -- Check if it's "Sleepy Time"
     if isSleepyTime(time) then
